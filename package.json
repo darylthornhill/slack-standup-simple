@@ -1,6 +1,6 @@
 {
     "name": "slack-standup-simple",
-    "version": "0.0.1",
+    "version": "0.0.5",
     "description": "A useful bash command for simple slack standups.",
     "main": "index.js",
     "scripts": {
@@ -13,6 +13,9 @@
         "yesterday",
         "blockers"
     ],
+    "bin": {
+        "slack-standup": "./bin/index.js"
+    },
     "author": "Daryl Thornhill - @darylthornhill",
     "license": "ISC",
     "dependencies": {

@@ -13,7 +13,7 @@ npm install -g slack-standup-simple
 To setup the package run the following command and answer the questions:
 
 ```bash
-standup-standup-simple --init
+standup-standup --init
 ```
 
 You will need the channel, the web-hook url and your slack name.
@@ -21,7 +21,7 @@ You will need the channel, the web-hook url and your slack name.
 To use the package:
 
 ```bash
-standup-standup-simple
+standup-standup
 ```
 
 ## Why?

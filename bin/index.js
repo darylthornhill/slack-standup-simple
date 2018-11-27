@@ -1,8 +1,9 @@
+#!/usr/bin/env node
 require('dotenv').config();
 
 const program = require('commander');
-const standup = require('./src/standupQuestions');
-const setup = require('./src/setup');
+const standup = require('../src/standupQuestions');
+const setup = require('../src/setup');
 
 program
     .version('0.0.1')
