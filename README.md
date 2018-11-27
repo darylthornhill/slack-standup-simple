@@ -1,101 +1,34 @@
-## Render your React Components directly into custom HTML tags
+## Simple Slack standup
 
-This is a package that helps you use custom html tags to render your react components in.
-
-You can apply html attributes to these custom html tags and the attributes will get passed through to your React Component as props.
+This package helps you do a stand up in a slack channel from the command line.
 
 ## Installation
 
 To install the package:
 
 ```bash
-npm install react-render-custom-html-tag
+npm install -g slack-standup-simple
 ```
 
-To use package:
+To setup the package run the following command and answer the questions:
 
-```javascript
-import renderInCustomHtmlTag from 'react-render-custom-html-tag';
+```bash
+standup-standup-simple --init
 ```
 
-The function accepts two parameters:
+You will need the channel, the web-hook url and your slack name.
 
-```javascript
-renderInCustomHtmlTag(Component, 'name-of-custom-component');
-```
+To use the package:
 
-See code example for more details.
-
-## Code Example
-
-In Html set up your custom html tag. You can call this whatever you like, but in this example we are calling it `custom-htmltag`.
-
-```html
-<custom-htmltag></custom-htmltag>
-```
-
-In your react, import this package and use it when instantiating your class. Pass in the component as the first parameter the name of the custom html tag as a string as the second parameter (in this case: `'custom-htmltag'`).
-
-```jsx
-import React from 'react';
-import renderInCustomHtmlTag from 'react-render-custom-html-tag';
-
-class ExampleComponent extends React.Component {
-    constructor(props){
-        super(props);
-    }
-
-
-    render(){
-        const props = this.props;
-
-        return ()
-            <React.Fragment>
-                <h1>Hello World</h1>
-            </React.Fragment>
-        );
-    }
-}
-
-renderInCustomHtmlTag(ExampleComponent, 'custom-htmltag')
-```
-
-And that should be it. Your React Component should be injected into the page.
-
-### Attributes and Properties
-
-On the custom html tag that you create you can also give it attributes that get passed through to the React component as properties, We also parse some of the values as json if possible.
-
-```html
-<custom-htmltag name="Jeff" data="{&quot;someProp&quot;:&quot;JSON parsed&quot;,&quot;value&quot;:2}"></custom-htmltag>
-```
-
-In your React Component you can get access to these by calling your props.
-
-```javascript
-const name = this.props.name; // string
-```
-
-```javascript
-const data = this.props.data; // object
+```bash
+standup-standup-simple
 ```
 
 ## Why?
 
-We had a couple of project that we wanted to use react and sprinkle it through a normal html/php file. We found that our js started to fill up with a lot of **ReactDom.Renders**, with some vanilla js having to parse some of the properties that we wanted to pass into those components. So I build this, hopefully it helps some other people out.
+We used to use a service for slack stand-ups and was dealing with typing everything manually. However I wanted something a little easier to run.
+Instead of copying and pasting lots of yesterdays/todays/blockers.
 
-## Source Examples
+## Future plans
 
-To run the example follow below.
-
-```bash
-npm install
-```
-
-Run the compiler
-
-```bash
-npm run build
-```
-
-Open up the **example/index.html** file in chrome and see how it works.
+I have already coded part of this however I want to display yesterdays answers along side the questions in the command line so we have reference of what we have done.
