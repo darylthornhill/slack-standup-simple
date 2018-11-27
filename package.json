@@ -1,0 +1,24 @@
+{
+    "name": "slack-standup-simple",
+    "version": "0.0.1",
+    "description": "A useful bash command for simple slack standups.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "slack",
+        "standup",
+        "today",
+        "yesterday",
+        "blockers"
+    ],
+    "author": "Daryl Thornhill - @darylthornhill",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.18.0",
+        "commander": "^2.19.0",
+        "dotenv": "^6.1.0",
+        "inquirer": "^6.2.0"
+    }
+}
