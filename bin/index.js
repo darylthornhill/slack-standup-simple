@@ -1,5 +1,8 @@
 #!/usr/bin/env node
-require('dotenv').config();
+const os = require('os');
+const dir = os.homedir() + '/.slack-standup/';
+
+require('dotenv').config({ path: dir + '.env' });
 
 const program = require('commander');
 const standup = require('../src/standupQuestions');

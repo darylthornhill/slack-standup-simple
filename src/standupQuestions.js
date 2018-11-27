@@ -1,3 +1,6 @@
+const os = require('os');
+const dir = os.homedir() + '/.slack-standup/';
+
 const inquirer = require('inquirer');
 const fs = require('fs');
 const axios = require('axios');
@@ -43,7 +46,7 @@ function parseAnswers(answers) {
     axios
         .post(slackUrl, slackMessage)
         .then(() => {
-            fs.writeFile('yesterday_standup.txt', JSON.stringify(slackMessage), function(err) {
+            fs.writeFile(dir + 'yesterday_standup.txt', JSON.stringify(slackMessage), function(err) {
                 if (err) console.log(err);
                 console.log("Successfully stored yesterday's standup.");
             });

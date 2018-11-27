@@ -10,10 +10,10 @@ To install the package:
 npm install -g slack-standup-simple
 ```
 
-To setup the package run the following command and answer the questions:
+To setup the package run the following command and answer the questions, some peopled needed to run this slack-standup with sudo as the first time it creates a directory :
 
 ```bash
-standup-standup --init
+slack-standup --init
 ```
 
 You will need the channel, the web-hook url and your slack name.
@@ -21,7 +21,7 @@ You will need the channel, the web-hook url and your slack name.
 To use the package:
 
 ```bash
-standup-standup
+slack-standup
 ```
 
 ## Why?

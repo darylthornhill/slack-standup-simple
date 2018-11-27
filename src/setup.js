@@ -1,4 +1,7 @@
-require('dotenv').config();
+const os = require('os');
+const dir = os.homedir() + '/.slack-standup/';
+
+require('dotenv').config({ path: dir + '.env' });
 
 const inquirer = require('inquirer');
 const fs = require('fs');
@@ -12,7 +15,7 @@ const setupQs = [
     {
         type: 'input',
         name: 'SLACK_CHANNEL',
-        message: 'Where would you like your stand up to be posted?'
+        message: 'What channel would you like your stand up to be posted? (do not include #)'
     },
     {
         type: 'input',
@@ -27,7 +30,11 @@ function parseAnswers(answers) {
         envString += `${setupQs[index].name}=${answers[key]}\n`;
     });
 
-    fs.writeFile('.env', envString, function(err) {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir);
+    }
+
+    fs.writeFile(dir + '/.env', envString, function(err) {
         if (err) console.log(err);
         console.log('Stored environment files.');
     });
